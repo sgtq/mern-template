@@ -7,6 +7,7 @@ import connect from "./configs/db.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 import pinRoutes from "./Route/PinRoutes.js";
+import userRoutes from "./Route/UserRoutes.js";
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/pins", pinRoutes);
+app.use("/api/users", userRoutes);
 
 // Error Handling
 app.use(notFound);
